@@ -14,9 +14,9 @@ function App() {
 
 
 const searchBy = (data, term, first, condition) => {
-  const label = 'item.label'
-  const quantity = 'item.quantity'
-  const distance = 'item.distance'
+  const label = 'label'
+  const quantity = 'quantity'
+  const distance = 'distance'
 
   if (term.length === 0) {
     return data
@@ -36,15 +36,13 @@ const searchBy = (data, term, first, condition) => {
 const universalSearch = (data, term, condition, column) => {
   switch(condition) {
     case 'More':
-      return data.filter(item => eval(column) > term) // Использовать eval — плохая практика в реальной разработке. 
-                                                      // Это пример для тестового приложения. Альтернативный вариант — использовать отдельную функцию
-                                                      // для каждого случая (см. комментарий в конце страницы)
+      return data.filter(item => item[column] > term)
     case 'Less':
-      return data.filter(item => eval(column) < term)
+      return data.filter(item => item[column] < term)
     case 'Include':
-      return data.filter(item => String(eval(column)).includes(term))
+      return data.filter(item => String(item[column]).includes(term))
     case 'Equals':
-      return data.filter(item => String(eval(column)) === term)
+      return data.filter(item => String(item[column]) === term)
   }
 }
 
