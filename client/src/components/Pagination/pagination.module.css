@@ -1,0 +1,14 @@
+.div {
+    margin-top: 24px;
+}
+.default {
+    padding: 10px;
+    margin-right: 10px;
+}
+.active {
+    padding: 10px;
+    margin-right: 10px;
+    background-color: rgb(211, 211, 211);
+    border: 1px gray solid;
+    cursor: default;
+}

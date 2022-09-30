@@ -1,0 +1,3 @@
+create database itemsdb;
+use itemsdb;
+create table ITEMS (id INT PRIMARY KEY AUTO_INCREMENT, date DATE, label VARCHAR(255), quantity INT, distance INT);
